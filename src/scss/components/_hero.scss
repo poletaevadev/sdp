@@ -1,0 +1,110 @@
+@import "./mixins/mini";
+
+.hero {
+  &__container {
+    min-height: 400px;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include mobile {
+      min-height: unset;
+      padding: 30px;
+    }
+  }
+
+  &__swiper {
+    @include mobile {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__content {
+    max-width: 496px;
+
+    &--large {
+      max-width: 600px;
+    }
+
+    @include mobile {
+      max-width: 204px;
+    }
+  }
+
+  &__slide {
+    height: auto;
+
+    @include bg-cover;
+    background-color: $pinkVioletColor;
+
+    @include mobile {
+      height: 210px;
+    }
+  }
+
+  &__slide-1 {
+    background-image: url('../img/hero-1.jpg');
+
+    @include tablet {
+      background-image: url('../img/tablet/hero-1.jpg');
+    }
+
+    @include small-tablet {
+      background-image: url('../img/small-tablet/hero-1.jpg');
+    }
+  }
+
+  &__slide-2 {
+    background-image: url('../img/hero-2.jpg');
+
+    @include tablet {
+      background-image: url('../img/tablet/hero-2.jpg');
+    }
+
+    @include small-tablet {
+      background-image: url('../img/small-tablet/hero-2.jpg');
+    }
+
+    @include mobile {
+      background-image: url('../img/mobile/hero-2.jpg');
+    }
+  }
+
+  &__slide-3 {
+    background-image: url('../img/hero-3.jpg');
+
+    @include tablet {
+      background-image: url('../img/tablet/hero-3.jpg');
+    }
+
+    @include small-tablet {
+      background-image: url('../img/small-tablet/hero-3.jpg');
+    }
+
+    @include mobile {
+      background-image: url('../img/mobile/hero-3.jpg');
+    }
+  }
+
+  &__btn {
+    @include mobile {
+      display: none;
+    }
+
+    &--mob {
+      display: none;
+
+      @include mobile {
+        display: block;
+        max-width: 296px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.hero-hidden {
+  display: none !important;
+}

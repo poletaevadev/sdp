@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интернет-магазин SitDownPls</title>
+  <link href="css/vendor.css" rel="stylesheet">
+  <link href="css/global.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+  <script src="js/vendor.js" defer></script>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  @include('partials/header.html')
+  <main>
+    <section class="hero">
+      <div class="swiper swiper-hero hero__swiper">
+        <div class="swiper-wrapper hero__wrapper">
+          <div class="swiper-slide hero__slide hero__slide-1">
+            <div class="container hero__container">
+              <div class="hero__content">
+                <h2 class="main-title main-title--grey hero__title">
+                  Скидка&nbsp;15% на&nbsp;первую покупку
+                </h2>
+                <button class="btn-reset btn btn--primary hero__btn" aria-label="Получить">
+                  Получить!
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide hero__slide hero__slide-2">
+            <div class="container hero__container">
+              <div class="hero__content">
+                <h2 class="main-title main-title--grey hero__title">
+                  1000+ аксессуаров для дома
+                </h2>
+                <button class="btn-reset btn btn--primary hero__btn" aria-label="Подробнее">
+                  Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide hero__slide hero__slide-3">
+            <div class="container hero__container">
+              <div class="hero__content hero__content--large">
+                <h2 class="main-title hero__title">
+                  Коллекция стильного и яркого текстиля
+                </h2>
+                <button class="btn-reset btn btn--primary hero__btn" aria-label="Подробнее">
+                  Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination hero__pagination"></div>
+        </div>
+      </div>
+      <button class="btn-reset btn btn--primary hero__btn hero__btn--mob" aria-label="Получить">
+        Получить!
+      </button>
+      <div class="hero__plug plug flex hero-hidden">
+        <img class="plug__img" src="../img/plug.svg" alt="Плажка">
+        <p class="section-descr plug__descr">
+          По&nbsp;вашему запросу ничего не&nbsp;нашлось
+        </p>
+    </div>
+    </section>
+    <section class="special">
+      <div class="container special__container">
+        <h3 class="section-title special__title">
+          Специальные предложения
+        </h3>
+        <div class="special__arrows swiper-arrows flex">
+          <button class="btn-reset special__arrow special__arrow--left btn-arrow btn-arrow--left" aria-label="Предыдущий">
+            <svg class="btn-arrow__icon" width="7" height="12">
+              <use xlink:href="/img/sprite.svg#arrow"></use>
+            </svg>
+          </button>
+          <button class="btn-reset special__arrow special__arrow--right btn-arrow btn-arrow--right" aria-label="Следующий">
+            <svg class="btn-arrow__icon" width="7" height="12">
+              <use xlink:href="/img/sprite.svg#arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="special__content swiper swiper-special">
+          <div class="swiper-wrapper special__wrapper">
+            <article class="swiper-slide special__slide special__slide-1 flex card card--special">
+              <img class="card__img" src="../img/cards/x-24.png" alt="x-24">
+              <div class="card__info card__info--special">
+                <h4 class="card__title card__title--special">
+                  Кресло велюровое “X&#8209;24”
+                </h4>
+                <span class="card__price card__price--special">
+                  15&nbsp;990 руб
+                </span>
+                <span class="card__price card__price--old">
+                  24&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn card__btn--special" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="card__discount">
+                -&nbsp;9&nbsp;000
+              </span>
+            </article>
+            <article class="swiper-slide special__slide special__slide-2 flex card card--special card--large">
+              <img class="card__img" src="../img/cards/z-44.png" alt="z-44">
+              <div class="card__info card__info--special">
+                <h4 class="card__title card__title--special">
+                  Диван тканевый “Z&#8209;44”
+                </h4>
+                <span class="card__price card__price--special">
+                  22&nbsp;990 руб
+                </span>
+                <span class="card__price card__price--old">
+                  32&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn card__btn--special" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="card__discount">
+                -&nbsp;10&nbsp;000
+              </span>
+            </article>
+            <article class="swiper-slide special__slide special__slide-3 flex card card--special">
+              <img class="card__img" src="../img/cards/quartz-23.png" alt="quartz-23">
+              <div class="card__info card__info--special">
+                <h4 class="card__title card__title--special">
+                  Будильник “Quartz&#8209;23”
+                </h4>
+                <span class="card__price card__price--special">
+                  1&nbsp;290 руб
+                </span>
+                <span class="card__price card__price--old">
+                  1&nbsp;890 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="card__discount">
+                -&nbsp;600
+              </span>
+            </article>
+            <article class="swiper-slide special__slide special__slide-4 flex card card--special">
+              <img class="card__img" src="../img/cards/ohmydeer.png" alt="Oh my deer">
+              <div class="card__info card__info--special">
+                <h4 class="card__title card__title--special">
+                  Мини-скульптура “Oh&nbsp;my&nbsp;deer”
+                </h4>
+                <span class="card__price card__price--special">
+                  690 руб
+                </span>
+                <span class="card__price card__price--old">
+                  990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn card__btn--special" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="card__discount">
+                -&nbsp;300
+              </span>
+            </article>
+            <article class="swiper-slide special__slide special__slide-5 flex card card--special card--large">
+              <img class="card__img" src="../img/cards/z-85.png" alt="z-85">
+              <div class="card__info card__info--special">
+                <h4 class="card__title card__title--special">
+                  Диван вел-флок “Z&#8209;85”
+                </h4>
+                <span class="card__price card__price--special">
+                  22&nbsp;990 руб
+                </span>
+                <span class="card__price card__price--old">
+                  32&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="card__discount">
+                -&nbsp;10&nbsp;000
+              </span>
+            </article>
+            <article class="swiper-slide special__slide special__slide-6 flex card card--special">
+              <img class="card__img" src="../img/cards/h-18.png" alt="h-18">
+              <div class="card__info card__info--special">
+                <h4 class="card__title card__title--special">
+                  Термометр + гидрометр “H&#8209;18”
+                </h4>
+                <span class="card__price card__price--special">
+                  1&nbsp;390 руб
+                </span>
+                <span class="card__price card__price--old">
+                  2&nbsp;090 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn card__btn--special" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="card__discount">
+                -&nbsp;700
+              </span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rate">
+      <div class="container rate__container">
+        <h3 class="section-title rate__title">
+          Высокий рейтинг
+        </h3>
+        <ul class="list-reset rate__list grid">
+          <li class="rate__item col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/r-94.png" alt="r-94">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван кожаный “R&#8209;94”
+                </h4>
+                <span class="card__price">
+                  94&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                5,0
+              </span>
+            </article>
+          </li>
+          <li class="rate__item col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/t-75.png" alt="t-75">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван апартековый “T&#8209;75”
+                </h4>
+                <span class="card__price">
+                  69&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,9
+              </span>
+            </article>
+          </li>
+          <li class="rate__item col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/d-31.png" alt="d-31">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван тканевый “D&#8209;31”
+                </h4>
+                <span class="card__price">
+                  28&nbsp;490 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,8
+              </span>
+            </article>
+          </li>
+          <li class="rate__item col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/y-68.png" alt="y-68">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван велюровый “Y&#8209;68”
+                </h4>
+                <span class="card__price">
+                  22&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,8
+              </span>
+            </article>
+          </li>
+          <li class="rate__item col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/w-95.png" alt="w-95">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван из шинила “W&#8209;95”
+                </h4>
+                <span class="card__price">
+                  22&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,8
+              </span>
+            </article>
+          </li>
+          <li class="rate__item col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/g-41.png" alt="g-41">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван флоковый “G&#8209;41”
+                </h4>
+                <span class="card__price">
+                  17&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,8
+              </span>
+            </article>
+          </li>
+          <li class="rate__item rate__item--hidden-tab col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/v-43.png" alt="v-43">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван шиниловый “V&#8209;43”
+                </h4>
+                <span class="card__price">
+                  19&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,8
+              </span>
+            </article>
+          </li>
+          <li class="rate__item rate__item--hidden-tab col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/s-99.png" alt="s-99">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван велюровый “S&#8209;99”
+                </h4>
+                <span class="card__price">
+                  19&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,7
+              </span>
+            </article>
+          </li>
+          <li class="rate__item rate__item--hidden col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/f-85.png" alt="f-85">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван из кожзама “F&#8209;85”
+                </h4>
+                <span class="card__price">
+                  26&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,7
+              </span>
+            </article>
+          </li>
+          <li class="rate__item rate__item--hidden col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/h-64.png" alt="h-64">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван флоковый “H&#8209;64”
+                </h4>
+                <span class="card__price">
+                  25&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,6
+              </span>
+            </article>
+          </li>
+          <li class="rate__item rate__item--hidden col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/h-58.png" alt="h-58">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван флоковый “H&#8209;58”
+                </h4>
+                <span class="card__price">
+                  23&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,6
+              </span>
+            </article>
+          </li>
+          <li class="rate__item rate__item--hidden col-lg-3 col-md-3 col-sm-3">
+            <article class="flex rate__card card">
+              <img class="card__img card__img--rate" src="../img/cards/r-43.png" alt="r-43">
+              <div class="card__info flex">
+                <h4 class="card__title">
+                  Диван из кожзама “R&#8209;43”
+                </h4>
+                <span class="card__price">
+                  33&nbsp;990 руб
+                </span>
+                <button class="btn-reset btn btn--secondary card__btn" aria-label="Купить">
+                  Купить
+                </button>
+              </div>
+              <span class="rating card__rate">
+                4,6
+              </span>
+            </article>
+          </li>
+        </ul>
+        <div class="rate__more">
+          <button class="rate__more-btn btn-reset btn btn--primary" aria-label="Больше товаров">
+            Смотреть больше товаров
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="promo">
+      <div class="container promo__container">
+        <h1 class="promo__title main-title">
+          <span class="main-title__gold">Оксфорд 1950</span><br>
+          Новая коллекция изысканных кресел
+        </h1>
+        <button class="btn-reset btn btn--primary promo__btn" aria-label="Ознакомиться">
+          Ознакомиться
+        </button>
+      </div>
+      <button class="btn-reset btn btn--primary promo__btn promo__btn--mobile" aria-label="Ознакомиться">
+        Ознакомиться
+      </button>
+    </section>
+    <section class="top">
+      <div class="container top__container">
+        <h3 class="section-title top__title">
+          Топ категории
+        </h3>
+        <ul class="list-reset grid top__list">
+          <li class="top__item col-lg-6 col-md-6 col-sm-6">
+            <article class="top__card top-card top-card--large sofa flex">
+              <div class="top-card__links top-card__links--large flex">
+                <a class="top-card__link top-card__link--large link-sm" href="catalog" aria-label="Прямые диваны">Прямые</a>
+                <a class="top-card__link top-card__link--large link-sm" href="#" aria-label="Угловые диваны">Угловые</a>
+                <a class="top-card__link top-card__link--large link-sm" href="#"
+                  aria-label="Модульные диваны">Модульные</a>
+              </div>
+              <div class="top-card__title-container flex">
+                <h4 class="top-card__title">
+                  Диваны
+                </h4>
+                <a class="top-card__link-catalog link-catalog link-catalog--mob" href="#" aria-label="Перейти в каталог">
+                  <span class="link-catalog__arrow link-catalog__arrow--large btn-arrow btn-arrow--sm">
+                    <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                      <use xlink:href="/img/sprite.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <a class="top-card__link-catalog link-catalog" href="#" aria-label="Перейти в каталог">В&nbsp;каталог
+                <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                  <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                    <use xlink:href="/img/sprite.svg#arrow"></use>
+                  </svg>
+                </span>
+              </a>
+            </article>
+          </li>
+          <li class="top__item col-lg-6 col-md-3 col-sm-3">
+            <article class="top__card top-card top-card--large armchair flex">
+              <div class="top-card__links flex">
+                <a class="top-card__link link-sm" href="#" aria-label="Мягкие кресла">Мягкие</a>
+                <a class="top-card__link link-sm" href="#" aria-label="Кресла-кровати">Кресла-кровати</a>
+              </div>
+              <div class="top-card__title-container flex">
+                <h4 class="top-card__title">
+                  Кресла
+                </h4>
+                <a class="top-card__link-catalog link-catalog link-catalog--mob" href="#" aria-label="Перейти в каталог">
+                  <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                    <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                      <use xlink:href="/img/sprite.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <a class="top-card__link-catalog link-catalog" href="#" aria-label="Перейти в каталог">В&nbsp;каталог
+                <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                  <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                    <use xlink:href="/img/sprite.svg#arrow"></use>
+                  </svg>
+                </span>
+              </a>
+            </article>
+          </li>
+          <li class="top__item col-lg-4 col-md-3 col-sm-3">
+            <article class="top__card top-card bed flex">
+              <div class="top-card__links flex">
+                <a class="top-card__link link-sm" href="#" aria-label="Односпальные кровати">Односпальные</a>
+                <a class="top-card__link link-sm" href="#" aria-label="Двуспальные кровати">Двуспальные</a>
+              </div>
+              <div class="top-card__title-container flex">
+                <h4 class="top-card__title">
+                  Кровати
+                </h4>
+                <a class="top-card__link-catalog link-catalog link-catalog--mob" href="#" aria-label="Перейти в каталог">
+                  <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                    <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                      <use xlink:href="/img/sprite.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <a class="top-card__link-catalog link-catalog" href="#" aria-label="Перейти в каталог">В&nbsp;каталог
+                <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                  <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                    <use xlink:href="/img/sprite.svg#arrow"></use>
+                  </svg>
+                </span>
+              </a>
+            </article>
+          </li>
+          <li class="top__item col-lg-4 col-md-3 col-sm-3">
+            <article class="top__card top-card dresser flex">
+              <div class="top-card__links flex">
+                <a class="top-card__link link-sm" href="#" aria-label="Тумбы">Тумбы</a>
+                <a class="top-card__link link-sm" href="#" aria-label="Комоды">Комоды</a>
+              </div>
+              <div class="top-card__title-container flex">
+                <h4 class="top-card__title">
+                  Тумбы и&nbsp;комоды
+                </h4>
+                <a class="top-card__link-catalog link-catalog link-catalog--mob" href="#" aria-label="Перейти в каталог">
+                  <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                    <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                      <use xlink:href="/img/sprite.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <a class="top-card__link-catalog link-catalog" href="#" aria-label="Перейти в каталог">В&nbsp;каталог
+                <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                  <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                    <use xlink:href="/img/sprite.svg#arrow"></use>
+                  </svg>
+                </span>
+              </a>
+            </article>
+          </li>
+          <li class="top__item col-lg-4 col-md-3 col-sm-3">
+            <article class="top__card top-card chair flex">
+              <div class="top-card__links flex">
+                <a class="top-card__link link-sm" href="#" aria-label="Деревянные стулья">Деревянные</a>
+                <a class="top-card__link link-sm" href="#" aria-label="Металлокаркасные стулья">Металлокаркас</a>
+              </div>
+              <div class="top-card__title-container flex">
+                <h4 class="top-card__title">
+                  Стулья
+                </h4>
+                <a class="top-card__link-catalog link-catalog link-catalog--mob" href="#" aria-label="Перейти в каталог">
+                  <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                    <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                      <use xlink:href="/img/sprite.svg#arrow"></use>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+              <a class="top-card__link-catalog link-catalog" href="#" aria-label="Перейти в каталог">В&nbsp;каталог
+                <span class="link-catalog__arrow btn-arrow btn-arrow--sm">
+                  <svg class="btn-arrow__icon btn-arrow__icon--sm" width="5.55" height="8.88">
+                    <use xlink:href="/img/sprite.svg#arrow"></use>
+                  </svg>
+                </span>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="useful">
+      <div class="container useful__container">
+        <h3 class="section-title useful__title">
+          Полезное
+        </h3>
+        <div class="useful__arrows swiper-arrows flex">
+          <button class="btn-reset useful__arrow useful__arrow--left btn-arrow btn-arrow--left" aria-label="Предыдущий">
+            <svg class="btn-arrow__icon" width="7" height="12">
+              <use xlink:href="/img/sprite.svg#arrow"></use>
+            </svg>
+          </button>
+          <button class="btn-reset useful__arrow useful__arrow--right btn-arrow btn-arrow--right" aria-label="Следующий">
+            <svg class="btn-arrow__icon" width="7" height="12">
+              <use xlink:href="/img/sprite.svg#arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="useful__content swiper swiper-useful">
+          <div class="swiper-wrapper useful__wrapper">
+            <article class="swiper-slide useful__slide useful-slide flex">
+              <h3 class="visually-hidden">
+                Статья
+              </h3>
+              <img class="useful-slide__img" src="../img/useful-1.jpg" alt="Изображение">
+              <div class="useful-slide__content flex">
+                <p class="useful-slide__descr">
+                  И&nbsp;нет сомнений, что сделанные на&nbsp;базе интернет&#8209;аналитики выводы представляют собой
+                  не&nbsp;что
+                  иное?
+                </p>
+                <button class="btn-reset btn btn--secondary useful-slide__btn" aria-label="Читать">
+                  Читать
+                </button>
+              </div>
+            </article>
+            <article class="swiper-slide useful__slide useful-slide">
+              <h3 class="visually-hidden">
+                Статья
+              </h3>
+              <img class="useful-slide__img" src="../img/useful-2.jpg" alt="Изображение">
+              <div class="useful-slide__content flex">
+                <p class="useful-slide__descr">
+                  Как принято считать, некоторые особенности приносят несомненную пользу обществу?
+                </p>
+                <button class="btn-reset btn btn--secondary useful-slide__btn" aria-label="Читать">
+                  Читать
+                </button>
+              </div>
+            </article>
+            <article class="swiper-slide useful__slide useful-slide flex">
+              <h3 class="visually-hidden">
+                Статья
+              </h3>
+              <img class="useful-slide__img" src="../img/useful-3.jpg" alt="Изображение">
+              <div class="useful-slide__content flex">
+                <p class="useful-slide__descr">
+                  Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?
+                </p>
+                <button class="btn-reset btn btn--secondary useful-slide__btn" aria-label="Читать">
+                  Читать
+                </button>
+              </div>
+            </article>
+            <article class="swiper-slide useful__slide useful-slide flex">
+              <h3 class="visually-hidden">
+                Статья
+              </h3>
+              <img class="useful-slide__img" src="../img/useful-4.jpg" alt="Изображение">
+              <div class="useful-slide__content flex">
+                <p class="useful-slide__descr">
+                  Прежде всего, консультация с&nbsp;широким активом однозначно фиксирует необходимость распределения?
+                </p>
+                <button class="btn-reset btn btn--secondary useful-slide__btn" aria-label="Читать">
+                  Читать
+                </button>
+              </div>
+            </article>
+            <article class="swiper-slide useful__slide useful-slide flex">
+              <h3 class="visually-hidden">
+                Статья
+              </h3>
+              <img class="useful-slide__img" src="../img/useful-5.jpg" alt="Изображение">
+              <div class="useful-slide__content flex">
+                <p class="useful-slide__descr">
+                  Как принято считать, некоторые особенности приносят несомненную пользу обществу?
+                </p>
+                <button class="btn-reset btn btn--secondary useful-slide__btn" aria-label="Читать">
+                  Читать
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="connection">
+      <div class="container connection__container">
+        <h3 class="section-title connection__title">
+          Мы&nbsp;всегда вам рады!
+        </h3>
+        <div class="grid connection__content">
+          <div class="connection__left col-lg-6 col-md-4 col-sm-4 col-mb-6">
+            <p class="connection__descr">
+              Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность
+              распределения внутренних резервов и&nbsp;ресурсов.
+              <button id="tooltip" class="btn-reset connection__tooltip tooltip">
+                <svg class="tooltip__icon" width="6" height="8">
+                  <use xlink:href="/img/sprite.svg#tooltip"></use>
+                </svg>
+              </button>
+            </p>
+            <form class="connection__form form-connect connect flex" action="#" method="POST" enctype="multipart/form-data">
+              <div class="form-connect__input-container">
+                <input class="form-connect__input input input--form input-name" type="text" data-validate-field="name" name="Имя"
+                  placeholder="Как вас зовут?">
+              </div>
+              <div class="form-connect__input-container">
+                <input class="form-connect__input input input--form input-tel" type="tel" data-validate-field="tel" name="Телефон"
+                  placeholder="Ваш телефон">
+              </div>
+              <div class="form-connect__input-container">
+                <input class="form-connect__input input input--form input-mail" type="email" data-validate-field="email" name="Email"
+                  placeholder="Ваш e-mail">
+              </div>
+              <button class="btn-reset btn btn--primary form-connect__btn" aria-label="Отправить">
+                Отправить
+              </button>
+              <div class="flex form-connect__privacy">
+                <input class="form-connect__checkbox input-checkbox visually-hidden" id="privacy" type="checkbox"
+                  name="privacy" checked>
+                <label class="form-connect__checkbox-cust checkbox checkbox--sm" for="privacy"></label>
+                <p class="form-connect__privacy-text">
+                  Принимаю <a class="form-connect__privacy-link link-sm" href="#"
+                    aria-label="Пользовательское соглашение">пользовательское соглашение</a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="connection__right col-lg-6 col-md-5 col-sm-2">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  @include('partials/footer.html')
+  <div class="modal flex">
+    @include('partials/modals/thanks.html')
+  </div>
+</body>
+
+</html>

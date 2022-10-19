@@ -1,0 +1,43 @@
+// Colors
+$primaryColor: #a65cf0;
+$primaryLightColor: #c998fb;
+$primaryShadeColor: #7033ac;
+$pinkLightColor: #f8efff;
+$pinkVioletColor: #ebd1ff;
+$secondaryColor: #ff862f;
+$secondaryLightColor: #ffbd59;
+$secondaryShadeColor: #bb370e;
+$redInputColor: #ff6972;
+$greenInputColor: #b8ec64;
+$goldColor: #d5b986;
+$whiteColor: #fff;
+$greyLightColor: #f7f7f7;
+$greyMdColor: #eaeaea;
+$greyColor: #999;
+$greyShadeColor: #666;
+$blackColor: #333;
+$limeColor: #daffd1;
+$boneColor: #fff5d1;
+
+// gap
+$gridGap: 32px;
+$gridMobGap: 16px;
+
+// fonts
+$fontFamilyMain: "OpenSans", sans-serif;
+$fontFamilyPromo: "PlayfairDisplay", serif;
+
+$smallMainFont: 400 14px / 100% $fontFamilyMain;
+$mdMainFont: 400 16px / 22px $fontFamilyMain;
+$highMainFont: 400 24px / 130% $fontFamilyMain;
+
+$titleFont: 400 32px / 100% $fontFamilyMain;
+
+$smallBoldFont: 600 16px / 100% $fontFamilyMain;
+$highBoldFont: 700 16px / 120% $fontFamilyMain;
+
+$promoFont: 900 60px / 120% $fontFamilyPromo;
+
+// transition time
+$trTime: .2s;
+

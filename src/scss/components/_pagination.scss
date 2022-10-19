@@ -1,0 +1,65 @@
+.catalog__pagination {
+  counter-reset: pag;
+  justify-content: center;
+
+  & .swiper-pagination-bullet {
+    width: 32px;
+    height: 32px;
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px) !important;
+    padding: 5px 9px;
+    background-color: transparent;
+    border: 2px solid $primaryColor;
+    border-radius: 10px;
+    transition: color $trTime ease-in-out;
+    transition-property: color, background-color, border-color;
+    opacity: 1;
+    text-align: center;
+
+
+    &::before {
+      counter-increment: pag;
+      content: counter(pag);
+      font: $smallBoldFont;
+      color: $primaryColor;
+      transition: color $trTime ease-in-out;
+      text-align: center;
+    }
+
+    @include desktop {
+      &:hover:not(:focus-visible) {
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+        &::before {
+          color: $whiteColor;
+        }
+      }
+    }
+
+    &:focus-visible {
+      background-color: $primaryLightColor;
+      border-color: $primaryColor;
+      outline: none;
+      &::before {
+        color: $whiteColor;
+      }
+    }
+
+    &:active {
+      background-color: $primaryShadeColor;
+      border-color: $primaryShadeColor;
+      &::before {
+        color: $whiteColor;
+      }
+    }
+  }
+
+  & .swiper-pagination-bullet-active {
+    background-color: $primaryShadeColor;
+    border-color: $primaryShadeColor;
+    pointer-events: none;
+
+    &::before {
+      color: $whiteColor;
+    }
+  }
+}

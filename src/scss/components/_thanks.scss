@@ -1,0 +1,17 @@
+.thanks {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    width: 172px;
+    height: 117px;
+    margin-bottom: 32px;
+    transform: translateX(-25px);
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+  }
+}

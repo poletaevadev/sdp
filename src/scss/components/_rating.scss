@@ -1,0 +1,25 @@
+.rating {
+  display: inline-block;
+  width: 45px;
+  height: 21px;
+  padding-left: 22.49px;
+  font: $mdMainFont;
+  line-height: 130%;
+  color: $secondaryColor;
+  background-image: url('../img/star.svg');
+  background-repeat: no-repeat;
+  background-position: 0 1.5px;
+
+  @include mobile {
+    font-size: 12px;
+    background-position: 2px 1px;
+    background-size: 13px 12px;
+  }
+
+  &--prod {
+    @include mobile {
+      font-size: 16px;
+      background-size: 16px 15px;
+    }
+  }
+}

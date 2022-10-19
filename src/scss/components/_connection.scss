@@ -1,0 +1,99 @@
+.connection {
+  padding: 35px 0 70px;
+
+  @include tablet {
+    padding-top: 34px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include mobile {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__right {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url('../img/connection.png');
+    transform: translateY(-16px);
+
+    @include tablet {
+      transform: translateY(34px);
+    }
+
+    @include small-tablet {
+      background-image: url('../img/small-tablet/connection.png');
+      transform: translateY(-29px);
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__descr {
+    margin: 0 0 16px;
+    font: $smallMainFont;
+    line-height: 19px;
+    color: $greyShadeColor;
+  }
+}
+
+.form-connect {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  &__input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    &:active {
+      border-color: $greenInputColor;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 12px;
+    padding: 17px 33px;
+    font: $smallBoldFont;
+  }
+
+  &__privacy {
+    position: relative;
+    padding-left: 22px;
+
+    @include mobile {
+      padding-left: 20px;
+    }
+  }
+
+  &__privacy-text {
+    margin: 0;
+    font: $smallMainFont;
+    line-height: 19px;
+    color: $blackColor;
+
+    @include mobile {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__privacy-link {
+    color: $primaryColor;
+    text-decoration: underline;
+
+    &::after {
+      right: -1px;
+      left: -1px;
+    }
+  }
+}
+

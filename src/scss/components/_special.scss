@@ -1,0 +1,29 @@
+.special {
+  padding: 70px 0 35px;
+
+  @include large-mobile {
+    padding-bottom: 59px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__slide-2 {
+
+    &::before {
+      content: " ";
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      width: 230px;
+      height: 107px;
+      background-repeat: no-repeat;
+      background-image: url('../img/cards/z-44-bg.png');
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}

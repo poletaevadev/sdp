@@ -1,0 +1,164 @@
+.footer {
+
+  &__container {
+    @include small-tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      gap: 24px;
+    }
+  }
+
+  &__top {
+    padding: 24px 0 20.8px;
+    background-color: $greyMdColor;
+
+    @include mobile {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__left {
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include small-tablet {
+      flex-direction: unset;
+      justify-content: space-between;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    height: 27px;
+    margin-bottom: 31px;
+
+    @include small-tablet {
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__right {
+    justify-content: space-between;
+
+    @include large-mobile {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__links {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include mobile {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 5px;
+
+    @include mobile {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__links-title {
+    font: $mdMainFont;
+    line-height: 100%;
+    color: $blackColor;
+  }
+
+  &__link {
+    font: $smallMainFont;
+    color: $greyColor;
+  }
+
+
+  &__bottom {
+    padding: 5px 0 6px;
+    background-color: $greyLightColor;
+    text-align: center;
+  }
+
+  &__bottom-text {
+    font: $smallMainFont;
+    line-height: 19px;
+    color: $greyColor;
+  }
+}
+
+.social {
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__link {
+    position: relative;
+    height: 30px;
+    z-index: 0;
+
+    & svg {
+      fill: $greyColor;
+      transition: fill $trTime ease-in-out;
+      transition-property: fill, stroke;
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: -16.5px;
+      right: -3px;
+      bottom: 2.1px;
+      left: -3px;
+      background-color: $primaryLightColor;
+      transition: opacity $trTime ease-in-out;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    @include desktop {
+      &:hover {
+        & svg {
+          fill: $primaryColor;
+        }
+      }
+    }
+
+    &:active {
+      outline: none;
+
+      & svg {
+        fill: $primaryShadeColor;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      & svg {
+        fill: $whiteColor;
+        stroke: #000;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

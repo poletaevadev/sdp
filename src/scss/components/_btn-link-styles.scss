@@ -1,0 +1,463 @@
+@import 'variables';
+@import 'mixins/breackpoint';
+
+// buttons
+
+.btn {
+  transition: border-color $trTime ease-in-out;
+  transition-property: border-color, background-color, color;
+  border: 2px solid transparent;
+  border-radius: 10px;
+
+  &--primary {
+    padding: 20px 48px;
+    font: $highBoldFont;
+    line-height: 100%;
+    color: $whiteColor;
+    background-color: $primaryColor;
+
+    @include desktop {
+      &:hover {
+        background-color: $primaryLightColor;
+        border-color: transparent;
+      }
+    }
+
+    &:active {
+      background-color: $primaryShadeColor;
+      border-color: transparent;
+    }
+
+    &:focus-visible {
+      background-color: $primaryLightColor;
+      border-color: $primaryShadeColor;
+    }
+
+    &:disabled {
+      background-color: $greyMdColor;
+      color: $greyColor;
+      border-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    padding: 17px 33px;
+    font: $smallBoldFont;
+    color: $primaryColor;
+    background-color: transparent;
+    border-color: $primaryColor;
+
+    @include desktop {
+      &:hover {
+        background-color: $primaryColor;
+        color: $whiteColor;
+        border-color: transparent;
+      }
+    }
+
+    &:active {
+      background-color: $primaryShadeColor;
+      color: $whiteColor;
+      border-color: transparent;
+    }
+
+    &:focus-visible {
+      background-color: $primaryLightColor;
+      color: $whiteColor;
+      border-color: $primaryColor;
+    }
+  }
+}
+
+.btn-arrow {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  border: 2px solid $primaryColor;
+  transition: border-color $trTime ease-in-out;
+  transition-property: border-color, background-color;
+
+  &__icon {
+    position: absolute;
+    top: 8px;
+    left: 11px;
+    stroke: $primaryColor;
+    stroke-width: 2px;
+    transition: stroke $trTime ease-in-out;
+
+    &--sm {
+      top: 5px;
+      left: 6.5px;
+    }
+  }
+
+  @include desktop {
+    &:hover:not([disabled]) {
+      background-color: $primaryColor;
+      border: 2px solid $primaryColor;
+    }
+  }
+
+  &:active:not([disabled]) {
+    background-color: $primaryShadeColor;
+    border: 2px solid $primaryShadeColor;
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: $primaryLightColor;
+    border: 2px solid $primaryColor;
+    outline: none;
+  }
+
+  &--left {
+    margin-right: 13px;
+    transform: rotate(180deg);
+  }
+
+  &--sm {
+    width: 22px;
+    height: 22px;
+  }
+
+}
+
+.btn-arrow:hover .btn-arrow__icon,
+.btn-arrow:active .btn-arrow__icon,
+.btn-arrow:focus-visible .btn-arrow__icon {
+  stroke: $whiteColor;
+}
+
+.btn-arrow.swiper-button-disabled {
+  border-color: $greyColor;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-arrow.swiper-button-disabled .btn-arrow__icon {
+  stroke: $greyColor;
+}
+
+// links
+
+.link-md {
+  position: relative;
+  transition: color $trTime ease-in-out;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: -3px;
+    right: -7px;
+    bottom: -3px;
+    left: -7px;
+    z-index: -1;
+    transition: opacity $trTime ease-in-out;
+    background-color: $pinkVioletColor;
+    opacity: 0;
+  }
+
+  @include desktop {
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  &:active {
+    color: $primaryShadeColor;
+    outline: none;
+  }
+
+  &:focus-visible {
+    color: $blackColor;
+    outline: none;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.link-sm {
+  position: relative;
+  transition: color $trTime ease-in-out;
+  color: $greyColor;
+  z-index: 0;
+
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: -1px;
+    right: -8px;
+    bottom: -1px;
+    left: -8px;
+    z-index: -1;
+    transition: opacity $trTime ease-in-out;
+    background-color: $pinkVioletColor;
+    opacity: 0;
+  }
+
+  &--active {
+    color: $primaryShadeColor;
+    pointer-events: none;
+  }
+
+  @include desktop {
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  &:active {
+    color: $primaryShadeColor;
+    outline: none;
+  }
+
+  &:focus-visible {
+    color: $primaryShadeColor;
+    outline: none;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.link-catalog {
+  position: relative;
+  margin-top: auto;
+  font: $highBoldFont;
+  color: $primaryColor;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: calc(100% - 27px);
+    height: 2px;
+    background-color: $primaryColor;
+    transition: opacity $trTime ease-in-out;
+    transition-property: opacity, background-color;
+    opacity: 0;
+  }
+
+  @include desktop {
+    &:hover {
+      color: $primaryColor;
+
+      & .link-catalog__arrow {
+        background-color: $primaryColor;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:active {
+    color: $primaryShadeColor;
+    outline: none;
+
+    &::before {
+      background-color: $primaryShadeColor;
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible {
+    color: $primaryColor;
+    outline: none;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  &--mob {
+    display: none;
+
+    @include mobile {
+      display: inline-block;
+      margin-top: unset;
+    }
+  }
+
+
+  &__arrow {
+    display: inline-block;
+    transition-property: border-color, background-color;
+    transform: translateY(6px);
+
+    @include tablet {
+      transform: translateY(5px);
+    }
+
+    &--large {
+      @include mobile {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.link-catalog:hover .link-catalog__arrow {
+  background-color: $primaryColor;
+  border: 2px solid $primaryColor;
+}
+
+.link-catalog:active .link-catalog__arrow {
+  background-color: $primaryShadeColor;
+  border: 2px solid $primaryShadeColor;
+}
+
+.link-catalog:focus-visible .link-catalog__arrow {
+  background-color: $primaryLightColor;
+  border: 2px solid $primaryColor;
+}
+
+.link-catalog:hover .btn-arrow__icon,
+.link-catalog:active .btn-arrow__icon,
+.link-catalog:focus-visible .btn-arrow__icon {
+  stroke: $whiteColor;
+}
+
+.purple-link {
+  transition: color $trTime ease-in-out;
+  @include desktop {
+    &:hover {
+      color: $primaryLightColor;
+    }
+  }
+
+  &:focus-visible {
+    color: $primaryShadeColor;
+    outline: none;
+  }
+
+  &:active {
+    color: $primaryLightColor;
+  }
+}
+// tel
+
+.tel {
+  position: relative;
+  padding-left: 18px;
+  font: $smallMainFont;
+  color: $secondaryColor;
+  transition: color $trTime ease-in-out;
+  z-index: 0;
+
+  & svg {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    fill: $secondaryColor;
+    transition: fill $trTime ease-in-out;
+  }
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: -4px;
+    right: 0;
+    bottom: -4px;
+    left: 0;
+    background-color: $boneColor;
+    transition: opacity $trTime ease-in-out;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  @include desktop {
+    &:hover {
+      color: $secondaryLightColor;
+
+      & svg {
+        fill: $secondaryLightColor;
+      }
+    }
+  }
+
+  &:active {
+    color: $secondaryShadeColor;
+    outline: none;
+
+    & svg {
+      fill: $secondaryShadeColor;
+    }
+  }
+
+  &:focus-visible {
+    color: $secondaryColor;
+    outline: none;
+
+    & svg {
+      fill: $secondaryColor;
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  @include mobile {
+    padding-left: 22px;
+  }
+}
+
+.tooltip {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-4px);
+  border-radius: 100%;
+  border: 1px solid $secondaryColor;
+  transition: background-color $trTime ease-in-out;
+
+  &__icon {
+    position: absolute;
+    left: calc(50% - 3px);
+    top: calc(50% - 3.5px);
+    fill: $secondaryColor;
+    transition: fill $trTime ease-in-out;
+  }
+
+  &[aria-describedby="tippy-1"] {
+    background-color: $secondaryColor;
+    outline: none;
+    & svg {
+      fill: $whiteColor;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.tippy-box[data-theme~='custom'] {
+  width: 157px;
+  padding: 5px;
+  background-color: $blackColor;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  color: $whiteColor;
+  border-radius: 0;
+}
+
+.tippy-content {
+  padding: 0px;
+}

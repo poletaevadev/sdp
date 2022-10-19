@@ -1,0 +1,181 @@
+.choices {
+  width: 84px;
+
+  &__inner {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    padding-right: 19px;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: -1px;
+      right: 4px;
+      bottom: -3px;
+      left: 1px;
+      background-color: $pinkVioletColor;
+      transition: opacity $trTime ease-in-out;
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  &__list--single {
+    & .choices__item {
+      width: 100%;
+      padding-left: 4px;
+      font: $mdMainFont;
+      line-height: 120%;
+      color: $primaryColor;
+    }
+  }
+
+  &__list--dropdown {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 27px;
+    right: 0;
+    padding: 14px;
+    z-index: 1;
+    background-color: $whiteColor;
+    border: 2px solid $greyLightColor;
+  }
+
+  &__item {
+    font: $smallMainFont;
+    line-height: 130%;
+    color: $blackColor;
+    transition: color $trTime ease-in-out;
+
+    @include desktop {
+      &:hover {
+        color: $primaryLightColor;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    outline: none;
+    outline-offset: 0px;
+  }
+
+}
+
+.choices__list--dropdown.is-active {
+  display: block;
+}
+
+.choices .choices__list .choices__item.is-selected {
+  display: none;
+}
+
+.choices[data-type*=select-one] {
+  position: relative;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 11px;
+    right: 12px;
+    width: 8px;
+    height: 1.3px;
+    background-color: $primaryColor;
+    transition: background-color $trTime ease-in-out;
+    transition-property: transform, background-color;
+    transform: rotate(45deg);
+    z-index: 3;
+
+    @include mobile {
+      right: 10px;
+    }
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 11px;
+    right: 7px;
+    width: 8px;
+    height: 1.3px;
+    background-color: $primaryColor;
+    transition: background-color $trTime ease-in-out;
+    transition-property: transform, background-color;
+    transform: rotate(-45deg);
+    z-index: 3;
+
+    @include mobile {
+      right: 5px;
+    }
+  }
+
+  @include desktop {
+    &:hover {
+      &::before {
+        background-color: $primaryLightColor;
+      }
+
+      &::after {
+        background-color: $primaryLightColor;
+      }
+    }
+  }
+
+  &:focus-visible {
+    &::before {
+      background-color: $primaryShadeColor;
+    }
+
+    &::after {
+      background-color: $primaryShadeColor;
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: $primaryShadeColor;
+    }
+
+    &::after {
+      background-color: $primaryShadeColor;
+    }
+  }
+}
+
+
+.choices[data-type*=select-one]:focus-visible .choices__inner::before {
+  opacity: 1;
+}
+
+.choices[data-type*=select-one]:focus-visible .choices__list--single .choices__item {
+  color: $primaryShadeColor;
+}
+
+.choices[data-type*=select-one]:active .choices__list--single .choices__item {
+  color: $primaryShadeColor;
+}
+
+.choices[data-type*=select-one].is-open .choices__inner::before {
+  opacity: 0;
+}
+
+.choices[data-type*=select-one].is-open::before {
+  background-color: $primaryColor;
+  transform: rotate(-45deg);
+}
+
+.choices[data-type*=select-one].is-open::after {
+  background-color: $primaryColor;
+  transform: rotate(45deg);
+}
+
+.choices[data-type*=select-one].is-open .choices__list--single .choices__item {
+  color: $primaryColor;
+}

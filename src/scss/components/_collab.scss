@@ -1,0 +1,124 @@
+.collab {
+  padding: 19px 0 70px;
+
+  @include mobile {
+    padding-top: 0;
+  }
+
+  &__container {
+    @include mobile {
+      gap: 32px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__content {
+    @include mobile {
+      gap: 32px;
+    }
+  }
+
+  &__title-sm {
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 33px;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 22px;
+
+      &--mb {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  &__descr {
+    font: $mdMainFont;
+    line-height: 180%;
+    color: $greyShadeColor;
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    &--sm {
+      line-height: 150%;
+    }
+
+    &--cust {
+      margin-bottom: 13px;
+      font-weight: 600;
+      line-height: 22px;
+      color: $secondaryColor;
+
+      @include mobile {
+        margin-bottom: 9px;
+        font-size: 16px;
+      }
+    }
+
+    &--lg {
+      font-size: 24px;
+      line-height: 150%;
+      color: $blackColor;
+
+      @include mobile {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__list-item {
+
+    &--column {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    margin-right: 12px;
+    width: 25px;
+    height: 25px;
+
+    &--num {
+      font: $smallBoldFont;
+      line-height: 180%;
+      color: $secondaryColor;
+    }
+  }
+
+  &__guarantee {
+    min-height: 116px;
+    height: 100%;
+    padding-left: 109px;
+    align-items: center;
+    background-image: url('../img/collab-pencil.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 77px 116px;
+
+    @include mobile {
+      min-height: 72px;
+      padding-left: 52px;
+      background-position: 0 center;
+      background-size: 36px 54px;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.promo {
+  @include bg-cover;
+  background-image: url('../img/promo.jpg');
+  background-color: $pinkVioletColor;
+
+  @include tablet {
+    background-image: url('../img/tablet/promo.jpg');
+  }
+
+  @include small-tablet {
+    background-image: url('../img/small-tablet/promo.jpg');
+  }
+
+  @include mobile {
+    background-image: none;
+    background-color: unset;
+  }
+
+  &__container {
+    padding-top: 152px;
+    padding-bottom: 150px;
+
+    @include tablet {
+      padding-top: 153px;
+    }
+
+    @include small-tablet {
+      padding-left: 36px;
+    }
+
+    @include mobile {
+      min-height: 210px;
+      margin-bottom: 32px;
+      padding: 30px 0;
+      background-image: url('../img/mobile/promo.jpg');
+      @include bg-cover;
+      background-color: $pinkVioletColor;
+    }
+  }
+
+  &__title {
+    max-width: 508px;
+    font-weight: 400;
+    line-height: 120%;
+
+    @include mobile {
+      width: calc((187px + 24px) / 320px * 100%);
+      padding: 0 12px;
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    padding: 20px 29.5px;
+
+    @include mobile {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+      max-width: 296px;
+      width: 100%;
+      margin: 0 auto;
+
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+}

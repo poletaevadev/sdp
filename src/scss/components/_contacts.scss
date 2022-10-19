@@ -1,0 +1,160 @@
+.contacts {
+  padding: 17px 0 70px;
+
+  @include mobile {
+    padding-top: 0;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__content {
+    flex-direction: column;
+  }
+
+  &__form {
+    position: relative;
+    max-width: 776px;
+    margin-bottom: 32px;
+
+    @include small-tablet {
+      max-width: 557px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 100%;
+    }
+  }
+
+  &__input {
+    margin-right: 32px;
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+
+    &:active:not(:focus-visible) {
+      background-color: $whiteColor;
+      border-color: $greyMdColor;
+    }
+  }
+
+  &__stores {
+    position: absolute;
+    top: 54px;
+    left: 0;
+    z-index: 100;
+  }
+
+  &__btn {
+    padding: 17px 33px;
+    font-weight: 600;;
+  }
+}
+
+.stores {
+  opacity: 0;
+  width: calc(100% - 120px - 32px);
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $whiteColor;
+  border-radius: 10px;
+  transition: opacity $trTime ease-in-out;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__item {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 7px 18px;
+    border: 1px solid $greyMdColor;
+    border-top: none;
+
+    &:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+
+    &--single {
+      border-radius: 10px !important;
+    }
+  }
+
+  &__title {
+    display: inline;
+    margin: 0;
+    font: $mdMainFont;
+    color: $blackColor;
+  }
+
+  &__address {
+    margin: 0;
+    font: $smallMainFont;
+    font-size: 12px;
+    line-height: 180%;
+    color: $greyColor;
+  }
+
+  &__link {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    transition: border-color $trTime ease-in-out;
+
+    &:focus-visible {
+      border-color: $primaryLightColor;
+      outline: none;
+
+      &::before {
+        background-color: $pinkLightColor;
+      }
+    }
+
+    &:active {
+      &::before {
+        background-color: $greyMdColor;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      background-color: transparent;
+      border-radius: inherit;
+      transition: background-color $trTime ease-in-out;
+      z-index: -1;
+    }
+
+    @include desktop {
+      &:hover {
+        &::before {
+          background-color: $greyLightColor;
+        }
+      }
+    }
+  }
+}
+
+.stores.active {
+  opacity: 1;
+}

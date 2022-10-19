@@ -1,0 +1,74 @@
+.price {
+  width: 100%;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+
+  @include tablet {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+
+  &__item {
+    align-items: center;
+
+    @include tablet {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-right: 9px;
+  }
+
+  &__input {
+    width: 86px;
+    height: 30px;
+    padding: 0 11px;
+    font: $mdMainFont;
+    line-height: 130%;
+    color: $greyShadeColor;
+    border: 1px solid $greyColor;
+    border-radius: 2px;
+    transition: border-color $trTime ease-in-out;
+    transition-property: border-color, background-color;
+
+    @include mobile {
+      width: 82px;
+      padding: 0 10px;
+    }
+
+    @include desktop {
+      &:hover {
+        border-color: $primaryColor;
+      }
+    }
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      outline-offset: 0px;
+    }
+
+    &:focus-visible {
+      background-color: $pinkVioletColor;
+      border-color: $primaryColor;
+    }
+
+    &:active {
+      background-color: transparent;
+      border-color: $primaryShadeColor;
+    }
+
+    &::placeholder {
+      font: $mdMainFont;
+      line-height: 130%;
+      color: $greyShadeColor;
+    }
+  }
+}

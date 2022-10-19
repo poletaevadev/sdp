@@ -1,0 +1,256 @@
+@import "./mixins/breackpoint";
+
+.search {
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__form {
+    position: relative;
+    max-width: 761px;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    background-color: $greyLightColor;
+    border-radius: 10px 0px 0px 10px;
+
+    @include tablet {
+      max-width: unset;
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+      border-radius: 10px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 21px;
+    left: 34px;
+    fill: $greyColor;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 18px 96px 18px 58px;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 10px 0px 0px 10px;
+
+    @include mobile {
+      border-radius: 10px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 14px;
+    right: 32px;
+  }
+
+  &__right {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+
+    @include small-tablet {
+      max-width: 189px;
+    }
+
+    @include mobile {
+      max-width: unset;
+    }
+  }
+
+  &__select {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    padding: 16px 30px;
+    font: $mdMainFont;
+    color: $primaryColor;
+    background-color: $whiteColor;
+    border: 2px solid $greyLightColor;
+    border-radius: 0px 10px 10px 0px;
+    text-align: left;
+    transition: border-color $trTime ease-in-out;
+    transition-property: background-color, border-color;
+    z-index: 100;
+
+    @include desktop {
+      &:hover {
+        border-color: $primaryColor;
+      }
+    }
+
+    @include mobile {
+      border-radius: 10px;
+    }
+
+    &:focus-visible {
+      background-color: $pinkLightColor;
+      border-color: $primaryColor;
+      outline: none;
+    }
+
+    &:active {
+      border-color: $primaryShadeColor;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    transition: transform $trTime ease-in-out;
+    z-index: 110;
+  }
+
+  &__category {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+  }
+}
+
+.search__input:active + .search__icon {
+  fill: $primaryColor;
+}
+
+
+.category {
+  display: none;
+  width: 100%;
+  padding: 79px 77px 22px 29px;
+  background-color: $whiteColor;
+  border: 2px solid $greyLightColor;
+  border-radius: 0px 10px 10px 10px;
+
+  &__list {
+    column-count: 2;
+
+    @include small-tablet {
+      column-count: 1;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 11px;
+  }
+
+  &__link {
+    font: $mdMainFont;
+    line-height: 130%;
+    color: $blackColor;
+  }
+}
+
+.search-select.search-select--active + .search__arrow {
+  transform: rotate(-180deg);
+}
+
+.category.category--open {
+  display: block;
+}
+
+.search-products {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $whiteColor;
+  border-radius: 10px;
+  transition: opacity $trTime ease-in-out;
+  z-index: 150;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__item {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 7px 18px;
+    border: 1px solid $greyMdColor;
+    border-top: none;
+
+    &:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+
+    &--single {
+      border-radius: 10px !important;
+    }
+  }
+
+  &__title {
+    display: inline;
+    margin: 0;
+    font: $mdMainFont;
+    color: $blackColor;
+  }
+
+  &__link {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    transition: border-color $trTime ease-in-out;
+
+    &:focus-visible {
+      border-color: $primaryLightColor;
+      outline: none;
+
+      &::before {
+        background-color: $pinkLightColor;
+      }
+    }
+
+    &:active {
+      &::before {
+        background-color: $greyMdColor;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      background-color: transparent;
+      border-radius: inherit;
+      transition: background-color $trTime ease-in-out;
+      z-index: -1;
+    }
+
+    @include desktop {
+      &:hover {
+        &::before {
+          background-color: $greyLightColor;
+        }
+      }
+    }
+  }
+}
+
+.search-products.active {
+  opacity: 1;
+}

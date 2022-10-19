@@ -1,0 +1,35 @@
+<div class="modal__container modal__container--buy" data-graph-target="buy" aria-modal="true" role="dialog">
+  <button class="btn-reset modal__close">
+    <span class="modal__close-bg"></span>
+  </button>
+  <div class="modal__content buy flex">
+    <p class="section-title buy__title">
+      Купить в&nbsp;один клик
+    </p>
+    <p class="section-descr buy__descr">
+      Чтобы оформить заказ&nbsp;&mdash; заполните формы ниже и&nbsp;наш менеджер свяжется с&nbsp;вами в&nbsp;течении
+      часа.
+    </p>
+    <form class="buy__form form-connect buy-form flex" action="#" method="POST">
+      <div class="form-connect__input-container">
+        <input class="form-connect__input input input--form input-name" type="text" data-validate-field="name" name="Имя"
+          placeholder="Как вас зовут?">
+      </div>
+      <div class="form-connect__input-container">
+        <input class="form-connect__input input input--form input-tel" type="tel" data-validate-field="tel" name="Телефон" placeholder="Ваш телефон">
+      </div>
+      <button class="btn-reset btn btn--primary form-connect__btn" aria-label="Отправить">
+        Отправить
+      </button>
+      <div class="flex form-connect__privacy">
+        <input class="form-connect__checkbox input-checkbox visually-hidden" id="privacy" type="checkbox"
+          name="privacy" checked>
+        <label class="form-connect__checkbox-cust checkbox checkbox--sm" for="privacy"></label>
+        <p class="form-connect__privacy-text">
+          Принимаю <a class="form-connect__privacy-link link-sm" href="#"
+            aria-label="Пользовательское соглашение">пользовательское соглашение</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

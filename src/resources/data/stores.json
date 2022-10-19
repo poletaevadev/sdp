@@ -1,0 +1,18 @@
+[
+  {
+    "city": "Москва",
+    "name": "SitDownPls на Солянке",
+    "metro": "Китай-город",
+    "street": "Солянка",
+    "building": "24",
+    "link": "#"
+  },
+  {
+    "city": "Москва",
+    "name": "SitDownPls на Покровке",
+    "metro": "Курская",
+    "street": "Покровка",
+    "building": "14",
+    "link": "#"
+  }
+]

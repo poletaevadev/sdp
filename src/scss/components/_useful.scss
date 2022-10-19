@@ -1,0 +1,57 @@
+.useful {
+  padding: 35px 0 35px;
+
+  @include large-mobile {
+    padding: 42px 0 85px;
+  }
+
+  &__container {
+    position: relative;
+  }
+}
+
+.useful-slide {
+  position: relative;
+  width: calc(624 / 1280 * 100%);
+  min-height: 676px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  background-color: $greyLightColor;
+  overflow: hidden;
+
+  @include tablet {
+    width: calc(296 / 952 * 100%);
+    min-height: 456px;
+  }
+
+  &__img {
+    @include small-tablet {
+      height: 202px;
+    }
+  }
+
+  &__content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 27px 30px 30px;
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: 27px;
+    font: $highMainFont;
+    line-height: 33px;
+    color: $blackColor;
+
+    @include tablet {
+      font: $mdMainFont;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 30px;
+    margin-top: auto;
+  }
+}

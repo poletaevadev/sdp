@@ -1,0 +1,80 @@
+.user-links {
+  &--desktop {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__link:not(:last-child) {
+    margin-right: 43px;
+  }
+
+  &__link {
+    position: relative;
+    z-index: 0;
+    & svg {
+      transition: fill $trTime ease-in-out;
+      fill: $primaryColor;
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: -2.4px;
+      right: -4px;
+      bottom: -2.4px;
+      left: -4px;
+      background-color: $primaryLightColor;
+      transition: opacity $trTime ease-in-out;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__cart {
+    position: relative;
+
+    &::before {
+      left: -15px;
+    }
+
+    &::after {
+      content: "0";
+      position: absolute;
+      top: 5px;
+      left: -11px;
+      width: 14px;
+      height: 15px;
+      padding: 2px 4px;
+      border-radius: 100px;
+      background-color: $secondaryColor;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 100%;
+      color: $whiteColor;
+      text-align: center;
+    }
+  }
+}
+
+@include desktop {
+  .user-links__link:hover svg {
+      fill: $primaryLightColor;
+  }
+}
+
+.user-links__link:active svg {
+  fill: $primaryShadeColor;
+}
+
+.user-links__link:focus-visible::before{
+  opacity: 1;
+}
+
+.user-links__link:focus-visible svg {
+  fill: $whiteColor;
+}

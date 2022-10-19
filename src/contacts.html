@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты</title>
+  <link href="css/vendor.css" rel="stylesheet">
+  <link href="css/global.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" defer>
+  </script>
+  <script src="js/vendor.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+  @include('partials/header.html')
+  <main class="main">
+    <div class="breadcrumb">
+      <div class="breadcrumb__container container">
+        <ul class="list-reset breadcrumb__list flex">
+          <li class="breadcrumb__item"><a class="breadcrumb__link link-sm" href="/">Главная</a></li>
+          <li class="breadcrumb__item"><a class="breadcrumb__link link-sm link-sm--active">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+    <section class="contacts">
+      <div class="container contacts__container">
+        <h1 class="section-title contacts__title">
+          Контакты
+        </h1>
+        <div class="contacts__content flex">
+          <form class="contacts__form flex" action="#" autocomplete="off">
+            <input class="contacts__input input input--form store" id="store" type="text" name="store"
+            placeholder="Поиск магазина">
+            <div id="match-list" class="contacts__stores stores flex">
+
+            </div>
+            <button class="btn-reset btn btn--primary contacts__btn" aria-label="Поиск">
+              Поиск
+            </button>
+          </form>
+          <div class="contacts__map map" id="map">
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  @include('partials/footer.html')
+</body>
+
+</html>

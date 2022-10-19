@@ -1,0 +1,17 @@
+.buy {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__descr {
+    max-width: 374px;
+    margin-bottom: 30px;
+    font: $smallMainFont;
+    line-height: 19px;
+    color: $blackColor;
+  }
+}

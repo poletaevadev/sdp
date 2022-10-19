@@ -1,0 +1,33 @@
+.rate {
+  padding: 35px 0 70px;
+
+  @include mobile {
+    padding-top: 60px;
+  }
+
+  &__item {
+    &--hidden {
+      display: none;
+    }
+
+    &--hidden-tab {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__more {
+    padding-top: 32px;
+    text-align: center;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__more-btn {
+    padding-right: 34.5px;
+    padding-left: 34.5px;
+  }
+}

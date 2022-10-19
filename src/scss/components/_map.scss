@@ -1,0 +1,168 @@
+.ymaps-2-1-79-balloon {
+  top: -298px !important;
+  left: -166px !important;
+  padding: 0 !important;
+  box-shadow: 0px 0px 30px rgb(0 0 0 / 25%) !important;
+  border-radius: 10px;
+
+  @include mobile {
+    top: -265px !important;
+    left: -106px !important;
+  }
+
+  &__layout {
+    width: 343px;
+    height: 100%;
+    border-radius: 10px;
+
+    @include mobile {
+      width: 232px;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box !important;
+    width: 100%;
+    padding: 30px 30px 26px 30px !important;
+
+    @include mobile {
+      padding: 24px 20px 26px !important;
+    }
+
+    & ymaps {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 1px;
+    font: $smallBoldFont  !important;
+    color: $blackColor  !important;
+
+    @include mobile {
+      font-size: 14px !important;
+      line-height: 19px !important;
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: 13px;
+    font: $smallMainFont  !important;
+    line-height: 180% !important;
+    color: $blackColor  !important;
+
+    @include mobile {
+      margin-bottom: 15px;
+      font-size: 12px !important;
+      line-height: 16px !important;
+    }
+
+    &--grey {
+      color: $greyColor  !important;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__tel {
+    margin-bottom: 17px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__time {
+    width: 100%;
+    margin-bottom: 9px;
+    padding: 12px 0;
+    border-top: 1px solid $greyLightColor;
+    border-bottom: 1px solid $greyLightColor;
+
+    @include mobile {
+      padding: 5px 0 12px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__close-button {
+    width: 15px !important;
+    height: 15px !important;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none !important;
+    opacity: 1 !important;
+
+    @include mobile {
+      right: 11px;
+      top: 13px;
+    }
+
+    &::before,
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 100%;
+      height: 1.8px;
+      border-radius: 10px;
+      background-color: $greyColor;
+      transition: background-color $trTime ease-in-out;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    @include desktop {
+      &:hover {
+
+        &::before,
+        &::after {
+          background-color: $primaryColor;
+        }
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::before,
+      &::after {
+        background-color: $primaryShadeColor;
+      }
+
+      & .modal__close-bg {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+
+      &::before,
+      &::after {
+        background-color: $primaryShadeColor;
+      }
+    }
+  }
+
+  &__tail {
+    left: calc(50% - 28.02px / 2) !important;
+  }
+
+}
+
+.ymaps-2-1-79-placemark-overlay {
+  display: block !important;
+}

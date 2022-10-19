@@ -1,0 +1,34 @@
+.breadcrumb {
+  margin-top: -13px;
+  padding-bottom: 13.5px;
+
+  &--product {
+    margin-top: -15px;
+  }
+
+  @include tablet {
+    margin-top: -12px;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  &__item:not(:last-child) {
+    position: relative;
+    margin-right: 15px;
+
+    &::before {
+      content: '/\00a0';
+      position: absolute;
+      top: 0.5px;
+      right: -16px;
+      color: $greyColor;
+
+    }
+  }
+
+  &__link {
+    font: $smallMainFont;
+  }
+}

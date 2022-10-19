@@ -1,0 +1,87 @@
+.checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  transition: background-color $trTime ease-in-out;
+  transition-property: border-color, background-color;
+  border: 1px solid $greyColor;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 13px;
+    height: 10px;
+    @include bg-cover;
+    background-image: url('../img/checkmark-sm.svg');
+    transition: opacity $trTime ease-in-out;;
+    opacity: 0;
+  }
+
+  &--sm {
+    top: 3px;
+    width: 14px;
+    height: 14px;
+
+    &::before {
+      top: 2px;
+      left: 2px;
+      width: 10.3px;
+      height: 8.5px;
+    }
+  }
+
+  @include mobile {
+    top: 1px;
+  }
+}
+
+.input-checkbox:checked + .checkbox {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+}
+
+.input-checkbox:checked + .checkbox::before {
+  opacity: 1;
+}
+
+.input-checkbox:focus-visible + .checkbox {
+  background-color: $primaryLightColor;
+  border-color: $primaryLightColor;
+}
+
+.checkbox-title {
+  font: $mdMainFont;
+  line-height: 130%;
+  color: $greyShadeColor;
+  cursor: pointer;
+
+  @include large-mobile {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+  }
+
+  &--discount {
+    @include large-mobile {
+      display: none;
+    }
+  }
+
+  &--mob {
+    display: none;
+
+    @include large-mobile {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.range {
+  width: 100%;
+  background: $greyMdColor;
+  box-shadow: none;
+  border: none;
+  border-radius: 3px;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+
+.noUi-horizontal {
+  height: 3px;
+}
+
+.noUi-connect {
+  background: $primaryColor;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 13px;
+  height: 13px;
+  right: -6.5px;
+  top: 0;
+  background-image: url('../../img/range.svg');
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  transition: background-image $trTime ease-in-out;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  @include desktop {
+    &:hover {
+      background-image: url('../../img/range-hover.svg');
+    }
+  }
+
+  &:active {
+    background-image: url('../../img/range-focus.svg');
+  }
+
+  &:focus-visible {
+    background-image: url('../../img/range-focus.svg');
+    outline: none;
+  }
+}

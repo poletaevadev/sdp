@@ -1,0 +1,143 @@
+.nav-top {
+  &__item:not(:last-child) {
+    margin-right: 64px;
+
+    @include tablet {
+      margin-right: 14px;
+    }
+  }
+
+  &__list {
+    @include tablet {
+      justify-content: space-between;
+      padding-right: 25px;
+
+      @include small-tablet {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    font: $smallMainFont;
+    color: $greyColor;
+  }
+
+  &--desktop {
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  &__wrap {
+
+    @include small-tablet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 300px;
+      height: 100%;
+      padding: 92px 0 60px;
+      background-color: $whiteColor;
+      z-index: 180;
+      transform: translateX(-100%);
+      transition: transform .3s ease-in-out;
+
+      &::before {
+        position: absolute;
+        content: " ";
+        right: 72px;
+        bottom: 60px;
+        width: 161px;
+        height: 112px;
+        background-image: url('../img/menu-bg.svg');
+        background-repeat: no-repeat;
+
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+
+    @include mobile {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      min-height: 100%;
+      height: calc(100vh - 142.2px);
+      overflow-y: scroll;
+      padding: 62px 0 0;
+      transform: translateX(-200%);
+    }
+  }
+
+  &__list {
+    justify-content: space-between;
+
+    @include small-tablet {
+      display: block;
+      width: calc(288px + 72px + 72px);
+      padding: 0 72px;
+      column-count: 2;
+      column-gap: 0;
+    }
+
+    @include mobile {
+      width: 100%;
+      column-count: unset;
+      padding: 0 12px;
+      padding-bottom: 26px;
+    }
+  }
+
+  &__list-bottom {
+    display: none;
+
+    @include large-mobile {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      padding: 24px 72px;
+      background-color: $greyLightColor;
+    }
+
+    @include mobile {
+      padding: 24px 12px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 31px;
+
+    @include tablet {
+      margin-right: 14px;
+    }
+
+    @include small-tablet {
+      margin-right: 0;
+      margin-bottom: 41px;
+    }
+  }
+
+  &__item-bottom:nth-child(2n) {
+    justify-self: flex-end;
+  }
+
+  &__link {
+    font: $mdMainFont;
+    color: $blackColor;
+    white-space: nowrap;
+  }
+
+  &__link-bottom {
+    font: $smallMainFont;
+    color: $greyColor;
+  }
+}
+
+.nav__wrap.is-opened {
+  transform: translateX(0);
+}
